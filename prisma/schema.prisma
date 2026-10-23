@@ -20,7 +20,7 @@ model User {
   name  String?
   password String
   role  ROLE @default(USER)
-  sellerCourses SellerCourse[] 
+  courses Course[] 
   purchases Purchase[] 
 }
 
@@ -29,19 +29,10 @@ model Course{
   title String
   description String
   price Int
-  imageUrl String
-  sellerCourses  SellerCourse[]
+  imageUrl String?
+  seller  User @relation(fields: [sellerId], references: [id])
+  sellerId Int
   purchases  Purchase[]
-}
-
-model SellerCourse{
-  seller User  @relation(fields: [sellerId],references: [id])
-  sellerId Int 
-  course Course    @relation(fields: [courseId],references: [id])
-  courseId Int
-
-  @@id([sellerId,courseId]) 
-
 }
 
 

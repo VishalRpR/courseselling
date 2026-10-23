@@ -11,8 +11,6 @@ adminRouter.post('/signup',(req,res)=>{
 
 })
 
-
-
 adminRouter.post("/course",()=>{
 
 })

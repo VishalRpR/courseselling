@@ -20,16 +20,11 @@ userRouter.post('/signin', (req, res) => {
 }
 )
 
-
-
 userRouter.post('/course/purchase', (req, res) => {
 
 
 
 })
-
-
-
 
 userRouter.get('/purchases', (req, res) => {
 
